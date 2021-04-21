@@ -111,16 +111,22 @@ class Play extends Phaser.Scene
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship03);
+            //increase timer by 3 seconds
+            this.clock.elapsed -= 3000;
         }
         if(this.checkCollision(this.p1Rocket, this.ship02))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship02);
+            //increase timer by 2 seconds
+            this.clock.elapsed -= 2000;
         }
         if(this.checkCollision(this.p1Rocket, this.ship01))
         {
             this.p1Rocket.reset();
             this.shipExplode(this.ship01);
+            //increase timer by 3 seconds
+            this.clock.elapsed -= 1000;
         }
     }
 
