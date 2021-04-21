@@ -11,7 +11,7 @@ class Rocket extends Phaser.GameObjects.Sprite
         //add object to existing scene
         scene.add.existing(this);
         this.isFiring = false; //track rocket's firing status
-        this.moveSpeed = 2; //pixels per frame
+        this.moveSpeed = 4; //pixels per frame
     }
 
     update()

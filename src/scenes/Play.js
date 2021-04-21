@@ -23,7 +23,7 @@ class Play extends Phaser.Scene
         this.load.spritesheet('explosion', './assets/explosion.png', {frameWidth: 64, frameHeight: 32, startFrame: 0, endFrame: 9});
         */
 
-        this.load.spritesheet('checkmark','./assets/checkmark.png',{frameWidth: 32, frameHeight: 32, startFrame: 0, endFrame: 11});
+        this.load.spritesheet('checkmark','./assets/checkmark.png',{frameWidth: 96, frameHeight: 96, startFrame: 0, endFrame: 11});
     }
 
     create()
@@ -62,8 +62,8 @@ class Play extends Phaser.Scene
         let scoreConfig = {
             fontFamily: 'Courier',
             fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            backgroundColor: '#FF0000',
+            color: '#FFFFFF',
             align: 'right',
             padding: {
                 top: 5,
