@@ -38,34 +38,35 @@ class Menu extends Phaser.Scene
 
         //show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'VACCINE PATROL', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2, 'User <--> arrows to move & (F) to administer', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2, 'Player 1: (A) (D) to move & (S) to administer', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Player 2: (J) (L) to move & (K) to administer', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#FFFFFF';
         menuConfig.color = '#FF0000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press <- for Novice and -> for Expert', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize*2 + borderPadding*2, 'Press (A) for Novice and (D) for Expert', menuConfig).setOrigin(0.5);
 
         //define keys
-        keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
-        keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
+        keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+        keyD = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 
     }
     update()
     {
-        if(Phaser.Input.Keyboard.JustDown(keyLEFT))
+        if(Phaser.Input.Keyboard.JustDown(keyA))
         {
             // easy mode
             game.settings = {
                 spaceshipSpeed: 3,
-                gameTimer: 60000,
+                gameTimer: 30000,
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene');
         }
-        if(Phaser.Input.Keyboard.JustDown(keyRIGHT))
+        if(Phaser.Input.Keyboard.JustDown(keyD))
         {
             // hard mode
             game.settings = {
                 spaceshipSpeed: 5,
-                gameTimer: 45000,
+                gameTimer: 30000,
             }
             this.sound.play('sfx_select');
             this.scene.start('playScene');
