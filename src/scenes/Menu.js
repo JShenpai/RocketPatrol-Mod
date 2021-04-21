@@ -14,6 +14,8 @@ class Menu extends Phaser.Scene
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
         */
 
+        this.load.image('title','./assets/titlescreen.png');
+
         this.load.audio('sfx_select','./assets/vaccineselect.wav');
         this.load.audio('sfx_vaccinated','./assets/vaccinated.wav');
         this.load.audio('sfx_vaccineshot','./assets/vaccineshot.wav');
@@ -37,12 +39,17 @@ class Menu extends Phaser.Scene
         }
 
         //show menu text
+
+        this.hospital = this.add.tileSprite(0,0,640,480,'title').setOrigin(0,0);
+
+        /*LEGACCY
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'VACCINE PATROL', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2, 'Player 1: (A) (D) to move & (S) to administer', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Player 2: (J) (L) to move & (K) to administer', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#FFFFFF';
         menuConfig.color = '#FF0000';
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize*2 + borderPadding*2, 'Press (A) for Novice and (D) for Expert', menuConfig).setOrigin(0.5);
+        */
 
         //define keys
         keyA = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
