@@ -8,9 +8,15 @@ class Menu extends Phaser.Scene
     preload() 
     {
         // load audio
+        /*LEGACY
         this.load.audio('sfx_select', './assets/blip_select12.wav');
         this.load.audio('sfx_explosion', './assets/explosion38.wav');
         this.load.audio('sfx_rocket', './assets/rocket_shot.wav');
+        */
+
+        this.load.audio('sfx_select','./assets/vaccineselect.wav');
+        this.load.audio('sfx_vaccinated','./assets/vaccinated.wav');
+        this.load.audio('sfx_vaccineshot','./assets/vaccineshot.wav');
 
         //
     }
@@ -19,9 +25,9 @@ class Menu extends Phaser.Scene
     {
         let menuConfig = {
             fontFamily: 'Courier',
-            fontSize: '28px',
-            backgroundColor: '#F3B141',
-            color: '#843605',
+            fontSize: '20px',
+            backgroundColor: '#FF0000',
+            color: '#FFFFFF',
             align: 'right',
             padding: {
                 top: 5,
@@ -31,10 +37,10 @@ class Menu extends Phaser.Scene
         }
 
         //show menu text
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2, 'User <--> arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
-        menuConfig.backgroundColor = '#00FF00';
-        menuConfig.color = '#000';
+        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'VACCINE PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2, 'User <--> arrows to move & (F) to administer', menuConfig).setOrigin(0.5);
+        menuConfig.backgroundColor = '#FFFFFF';
+        menuConfig.color = '#FF0000';
         this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press <- for Novice and -> for Expert', menuConfig).setOrigin(0.5);
 
         //define keys

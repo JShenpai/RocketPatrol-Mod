@@ -6,7 +6,7 @@ class Rocket extends Phaser.GameObjects.Sprite
         super(scene, x, y, texture, frame);
 
         //add sfx
-        this.sfxRocket = scene.sound.add('sfx_rocket'); // add rocket sfx
+        this.sfxRocket = scene.sound.add('sfx_vaccineshot'); // add rocket sfx
 
         //add object to existing scene
         scene.add.existing(this);
